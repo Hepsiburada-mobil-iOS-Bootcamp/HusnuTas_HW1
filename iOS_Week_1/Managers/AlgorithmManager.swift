@@ -49,12 +49,25 @@ class AlgorithmManager: AlgorithmProtocol {
      Explanation: "amanaplanacanalpanama" is a palindrome.
      */
     func isPalindromTest() {
-        
+        let s = "A man, a plan, a canal: Panama"
+        print("Is palindrome? \(isPalindrome(s))")
     }
     
-//    func isPalindrome(_ s: String) -> Bool {
-//
-//    }
+    func isPalindrome(_ s: String) -> Bool {
+        var newString = ""
+        
+        // iterating through the given string
+        for c in s {
+            // check if the character is a letter and if so add it to the newString variable
+            if c.isLetter {
+                newString += String(c)
+            }
+        }
+        
+        newString = newString.lowercased()
+        let reversedString = String(newString.reversed())
+        return newString == reversedString
+    }
     
     // MARK: - Valid Anagram
     /*
