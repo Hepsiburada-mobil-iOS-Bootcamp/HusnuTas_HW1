@@ -93,12 +93,22 @@ class AlgorithmManager: AlgorithmProtocol {
      Output: false
      */
     func duplicateTest() {
-        
+        let nums = [1,2,3,1]
+        print("Duplicate? \(containsDuplicate(nums))")
     }
-    
-//    func containsDuplicate(_ nums: [Int]) -> Bool {
-//            
-//    }
+
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+        // sort the given array of integers
+        let sortedNums = nums.sorted()
+        
+        // iterate through the sorted array
+        for i in 0..<sortedNums.count-1 {
+            if(sortedNums[i] == sortedNums[i+1]) {
+                return true
+            }
+        }
+        return false
+    }
     
     // MARK: - Merge Sorted Array
     /*
