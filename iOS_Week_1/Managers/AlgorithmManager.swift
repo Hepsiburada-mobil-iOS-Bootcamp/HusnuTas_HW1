@@ -164,12 +164,28 @@ class AlgorithmManager: AlgorithmProtocol {
 
      */
     func missingNumberTest() {
-        
+        let nums = [3,0,1]
+        print("Missing number: \(missingNumber(nums))")
     }
-    
-//    private func missingNumber(_ nums: [Int]) -> Int {
-//
-//    }
+
+    private func missingNumber(_ nums: [Int]) -> Int {
+        // sort the given array of integers
+        var sortedArray = nums.sorted()
+        // get the biggest number in the sorted array
+        guard let biggestNumber = sortedArray.popLast() else { return 0 }
+        // create an array with the range of biggest number
+        let numbersInRange = Array(0...biggestNumber)
+        
+        // iterate through the new array and return the missing number
+        for num in numbersInRange {
+            if !nums.contains(num) {
+                return num
+            }
+        }
+        
+        // if there is no missing number
+        return -1
+    }
     
     
 }
