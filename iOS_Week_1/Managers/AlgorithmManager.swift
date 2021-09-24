@@ -146,12 +146,13 @@ class AlgorithmManager: AlgorithmProtocol {
      Output: [2,2]
      */
     func arrayIntersectionTest() {
-        
+        let nums1 = [1,2,2,1], nums2 = [2,2]
+        print("Intersection result: \(intersect(nums1, nums2))")
     }
-    
-//    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-//
-//    }
+
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        return nums1.filter(nums2.contains)
+    }
     
     // MARK: - Missing Number
     /*
